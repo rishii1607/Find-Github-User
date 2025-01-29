@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find Github User</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <div class="content">
+          <svg
+            aria-hidden="true"
+            class="octicon"
+            height="64"
+            viewBox="0 0 16 16"
+            width="64"
+            style="
+              display: inline-block;
+              fill: #0070f3;
+              user-select: none;
+              vertical-align: text-bottom;
+            "
+          >
+            <path
+              fill-rule="evenodd"
+              d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+            ></path>
+          </svg>
+          <label for="username">Find Github User</label>
+          <input id="user_input" type="text" />
+          <button id="btn">
+            <i class="search-icon fa-sharp fa-solid fa-magnifying-glass"></i
+            >Find User
+          </button>
+          <div id="user-info">
+              
+            </span>
+            <div class="user-img">
+              <img
+                id="user_img"
+                src="https://avatars.githubusercontent.com/u/166281440?v=4"
+                alt="user-img"
+              />
+            </div>
+            <h1 class="user-name" id="user_name">RISHABH KASHYAP</h1>
+            <h2 class="user-id">
+              <a
+                
+                href="https://github.com/rishii1607"
+                target="_blank"
+                rel="noopener noreferrer"
+                >@<span id="user_id">rishii1607</span></a
+              >
+            </h2>
+            <div class="info">
+              <div class="info_item" >
+                <i class="fa-solid fa-location-dot location"></i
+                ><span id="user_place">MODINAGAR</span>
+              </div>
+              <div class="info_item" >
+                <i class="fa-sharp fa-solid fa-calendar-days calendar"></i
+                >Joined <span id="user_join">  April 7, 2024</span>
+              </div>
+            </div>
+            <div class="status">
+              <div class="status_item">
+                <span class="num" id="user_repositories">13</span
+                ><span class="num-label">Repositories</span>
+              </div>
+              <div class="status_item">
+                <span class="num" id="user_followers">0</span
+                ><span class="num-label">Followers</span>
+              </div>
+              <div class="status_item">
+                <span class="num" id="user_follwing">0</span
+                ><span class="num-label">Following</span>
+              </div>
+            </div>
+          </div>
+          <div id="user-not-found">
+            <span id="not_found">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

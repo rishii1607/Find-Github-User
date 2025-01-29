@@ -1,0 +1,178 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+body {
+  font-family: "Inter", serif;
+  background-color: rgb(26, 30, 34);
+  background-image: linear-gradient(rgb(26, 30, 34) 0%, rgb(36, 41, 46) 100%);
+  color: rgb(246, 248, 250);
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+#btn {
+    font-family: "Inter", serif;
+    padding: 14px 15px;
+    background-color: rgb(38, 48, 60);
+    color: #fff;
+    margin: 2rem 0;
+    font-weight: 300;
+    font-size: 1.3rem;
+    margin-left: 4px;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    width: 300px;
+    border: 1px solid rgb(38, 48, 60);
+    transition: all 0.5s;
+}
+#btn:hover {
+  border-color: #fff;
+  border: 1px solid #fff;
+  background-color: rgb(31 46 65);
+}
+.search-icon {
+  margin-right: 6px;
+}
+.container {
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  background-color: rgb(26, 30, 34);
+  background-image: linear-gradient(rgb(26, 30, 34) 0%, rgb(36, 41, 46) 100%);
+  color: rgb(246, 248, 250);
+}
+.content {
+  background-color: transparent;
+  border-radius: 5px;
+  padding: 2rem;
+  margin-bottom: 20vh;
+  max-width: 600px;
+  text-align: center;
+}
+label {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin: 2rem;
+}
+input {
+  background-color: rgb(38, 48, 60);
+  outline: 0px;
+  border: 0px;
+  border-radius: 0.25rem;
+  width: 100%;
+  max-width: 500px;
+  margin: 0px auto;
+  padding: 1rem;
+  color: rgb(121, 184, 255);
+  font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono",
+    "Lucida Console", Monaco, monospace;
+  font-size: 2rem;
+  font-weight: 400;
+  text-align: center;
+}
+.user-img {
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  border: 0.5rem solid rgb(0, 112, 243);
+  border-radius: 100%;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 1.5rem;
+}
+.user-img img {
+  border-radius: 100%;
+}
+img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+h1 .user-name {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: rgb(246, 248, 250);
+}
+a {
+  text-decoration: none;
+  transition: 0.2s ease-in-out;
+  color: rgb(0, 112, 243);
+  display: inline-block;
+}
+h2 .user-id {
+  font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono",
+    "Lucida Console", Monaco, monospace;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.info_item {
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  margin: 0px 1rem 0.5rem;
+  white-space: nowrap;
+  color: rgb(200, 225, 225, 1);
+}
+.info {
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+}
+.location {
+  height: 16px;
+  width: 14px;
+  display: inline-block;
+  vertical-align: text-bottom;
+}
+.calendar {
+  height: 16px;
+  width: 14px;
+  display: inline-block;
+  vertical-align: text-bottom;
+}
+.info i {
+  margin-right: 10px;
+}
+.status {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(100px, 150px));
+  gap: 0.5rem;
+  -webkit-box-pack: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.status_item {
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(30, 32, 35);
+  padding: 1rem;
+  border-radius: 0.25rem;
+  text-align: center;
+}
+.status_item .num {
+  color: rgb(246, 248, 250);
+  font-size: 1.5rem;
+}
+.status_item .num-label {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  margin-top: 0.75rem;
+  color: rgba(200, 225, 255, 0.7);
+}
+#user-info,
+#user-not-found{
+  display: none;
+}
