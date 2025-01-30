@@ -55,6 +55,8 @@ document.addEventListener("DOMContentLoaded", function () {
   let not_found = document.getElementById("not_found");
   let user_info = document.getElementById("user-info");
   let user_not_found = document.getElementById("user-not-found");
+  let user_url = document.getElementById("user_url");
+
 
 
   function getUser() {
@@ -83,6 +85,8 @@ document.addEventListener("DOMContentLoaded", function () {
             user_name.textContent = data.name || "No name available";
           if (user_img) user_img.src = data.avatar_url;
           if (user_id) user_id.textContent = data.login;
+          // if (user_url) user_url.setAttribute("href",`${data.html_url}`) //using set attribute
+          if (user_url) user_url.href = data.html_url;
           if (user_place)
             user_place.textContent = data.location || "No location provided";
           if (user_join) {
