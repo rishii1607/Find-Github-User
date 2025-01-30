@@ -14,7 +14,6 @@
 // let user_info = document.getElementById("user-info");
 // let user_not_found = document.getElementById("user-not-found");
 
-
 // btn.addEventListener("click", function () {
 //   console.log(user_input.value);
 //   let user = user_input.value;
@@ -42,8 +41,6 @@
 //     });
 // });
 
-
-
 document.addEventListener("DOMContentLoaded", function () {
   let user_input = document.getElementById("user_input");
   let btn = document.getElementById("btn");
@@ -59,45 +56,66 @@ document.addEventListener("DOMContentLoaded", function () {
   let user_info = document.getElementById("user-info");
   let user_not_found = document.getElementById("user-not-found");
 
- 
 
-  btn.addEventListener("click", function () {
-      console.log(user_input.value);
-      let user = user_input.value.trim(); // Remove extra spaces
+  function getUser() {
+    console.log(user_input.value);
+    let user = user_input.value.trim(); // Remove extra spaces
 
-      // if (user === "") {
-      //   user_not_found.style.display = "block";
-      //     // console.error("No username entered!");
-      //     not_found.textContent = "No username entered!";
-      //     return;
-      // }
+    if (user === "") {
+      user_not_found.style.display = "block";
+      console.error("No username entered!");
+      not_found.textContent = "No username entered!";
+      user_info.style.display="none";
+      return;
+    }
 
-      const url = `https://api.github.com/users/${user}`;
+    const url = `https://api.github.com/users/${user}`;
 
-      fetch(url)
-          .then((response) => response.json())
-          .then(function (data) {
-              if (data.message === "Not Found") {
-                  if (not_found) not_found.textContent = "User not found!";
-                  if (user_not_found) user_not_found.style.display = "block";
-                  if (user_info) user_info.style.display = "none";
-              } else {
-                  if (user_name) user_name.textContent = data.name || "No name available";
-                  if (user_img) user_img.src = data.avatar_url;
-                  if (user_id) user_id.textContent = data.login;
-                  if (user_place) user_place.textContent = data.location || "No location provided";
-                  if (user_join) user_join.textContent = data.created_at;
-                  if (user_repositories) user_repositories.textContent = data.public_repos;
-                  if (user_followers) user_followers.textContent = data.followers;
-                  if (user_following) user_following.textContent = data.following;
+    fetch(url)
+      .then((response) => response.json())
+      .then(function (data) {
+        if (data.message === "Not Found") {
+          if (not_found) not_found.textContent = "User not found!";
+          if (user_not_found) user_not_found.style.display = "block";
+          if (user_info) user_info.style.display = "none";
+        } else {
+          if (user_name)
+            user_name.textContent = data.name || "No name available";
+          if (user_img) user_img.src = data.avatar_url;
+          if (user_id) user_id.textContent = data.login;
+          if (user_place)
+            user_place.textContent = data.location || "No location provided";
+          if (user_join) {
+            let date = new Date(data.created_at);
 
-                  if (user_info) user_info.style.display = "block";
-                  if (user_not_found) user_not_found.style.display = "none";
-              }
-          })
-          .catch((error) => {
-              console.error("Error fetching data:", error);
-              if (not_found) not_found.textContent = "Error fetching data!";
-          });
+            let formattedDate = date.toLocaleDateString("en-US", {
+              // weekday: "long",
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            });
+
+            user_join.textContent = formattedDate;
+          }
+          if (user_repositories)
+            user_repositories.textContent = data.public_repos;
+          if (user_followers) user_followers.textContent = data.followers;
+          if (user_following) user_following.textContent = data.following;
+          if (user_info) user_info.style.display = "block";
+          if (user_not_found) user_not_found.style.display = "none";
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+        if (not_found) not_found.textContent = "Error fetching data!";
+      });
+  }
+
+  getUser()
+  btn.addEventListener("click", getUser);
+  user_input.addEventListener("keyup", function (event) {
+    if (event.keyCode === 13) {
+      getUser();
+    }
   });
 });
